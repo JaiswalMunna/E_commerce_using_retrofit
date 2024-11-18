@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.hilt.android.gradle.plugin)
+    kotlin("kapt")
 }
 
 android {
@@ -66,4 +68,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.gson.convertor)
+    implementation(libs.logging.interceptor)
+
+    //coil
+    implementation(libs.coil.compose)
+
+    //pagging
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.paging.runtime.ktx)
+
+    //hilt
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.compiler)
+    implementation(libs.hilt.navigation.compose)
+
 }
