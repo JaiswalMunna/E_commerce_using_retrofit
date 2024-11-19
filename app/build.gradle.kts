@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt.android.gradle.plugin)
     kotlin("kapt")
+    kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -85,5 +86,8 @@ dependencies {
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
     implementation(libs.hilt.navigation.compose)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
 }
