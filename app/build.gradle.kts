@@ -2,8 +2,13 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt.android.gradle.plugin)
+
+//    kotlin("jvm") version "2.0.0-RC1"
+//    kotlin("plugin.serialization") version "2.0.0-RC1"
+
     kotlin("kapt")
-    kotlin("plugin.serialization") version "2.0.21"
+    //kotlin("plugin.serialization") version "2.0.21"
+    kotlin("plugin.serialization") version "1.5.0"
 }
 
 android {
