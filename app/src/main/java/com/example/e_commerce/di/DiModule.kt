@@ -8,6 +8,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
@@ -23,6 +24,6 @@ object DiModule {
             .addInterceptor(logging).build()
 
         return Retrofit.Builder()
-            .baseUrl("https://api.escuelajs.co/api/v1/").client(client).build().create(ApiInterface::class.java)
+            .baseUrl("https://api.escuelajs.co/api/v1/").client(client).addConverterFactory(GsonConverterFactory.create()).build().create(ApiInterface::class.java)
     }
 }
